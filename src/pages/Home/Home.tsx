@@ -6,7 +6,7 @@ const Home = () => {
                 <a className="main-nav-logo" href="./index.html">
                     <img
                         className="main-nav-logo-image"
-                        src="./public/img/argentBankLogo.png"
+                        src="/img/argentBankLogo.png"
                         alt="Argent Bank Logo"
                     />
                     <h1 className="sr-only">Argent Bank</h1>
@@ -31,7 +31,7 @@ const Home = () => {
                 <section className="features">
                     <h2 className="sr-only">Features</h2>
                     <div className="feature-item">
-                        <img src="./public/img/icon-chat.png" alt="Chat Icon" className="feature-icon" />
+                        <img src="/img/icon-chat.png" alt="Chat Icon" className="feature-icon" />
                         <h3 className="feature-item-title">You are our #1 priority</h3>
                         <p>
                             Need to talk to a representative? You can get in touch through our
@@ -40,7 +40,7 @@ const Home = () => {
                     </div>
                     <div className="feature-item">
                         <img
-                            src="./public/img/icon-money.png"
+                            src="/img/icon-money.png"
                             alt="Chat Icon"
                             className="feature-icon"
                         />
@@ -51,7 +51,7 @@ const Home = () => {
                     </div>
                     <div className="feature-item">
                         <img
-                            src="./public/img/icon-security.png"
+                            src="/img/icon-security.png"
                             alt="Chat Icon"
                             className="feature-icon"
                         />
