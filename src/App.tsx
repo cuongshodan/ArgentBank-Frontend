@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home"
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import SignIn from './pages/Signin/SignIn'
+import Profile from './pages/Profile/Profile'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin/" element={<SignIn />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>
