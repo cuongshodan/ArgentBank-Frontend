@@ -1,15 +1,10 @@
-import React from 'react'
-
-
-
-const DropdownTransaction = (date, description, amount, balance) => {
+const DropdownTransaction = () => {
     return (
-        <div>
-
-            <div>{date}</div>
-            <div>{description}</div>
-            <div>{amount}</div>
-            <div>{balance}</div>
+        <div className="flex bg-red-400">
+            <div className="bg-green-800">date</div>
+            <div>description</div>
+            <div>amount</div>
+            <div>balance</div>
             {/* dropdown */}
         </div>
     )

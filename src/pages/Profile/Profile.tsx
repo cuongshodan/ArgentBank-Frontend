@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentToken, updateUserName } from '../../features/auth/authSlice';
 import { useGetProfileQuery } from '../../features/auth/authApiSlice';
+import DropdownTransaction from '../../components/DropdownTransaction/DropdownTransaction';
 
 const Profile = () => {
     const token = useSelector(selectCurrentToken);
@@ -29,15 +30,15 @@ const Profile = () => {
     return (
         <main className="main bg-dark">
             <div className="header">
-                <h1>
+                <h1 className="bg-green-800">
                     Welcome back<br />
                     {profile.body.userName}!
                 </h1>
 
                 <div>
-                    
+                    <DropdownTransaction />
                 </div>
-                
+
             </div>
         </main>
     );

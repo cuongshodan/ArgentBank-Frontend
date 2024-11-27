@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom styles */
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -293,3 +294,8 @@ body {
     width: 200px;
   }
 }
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
