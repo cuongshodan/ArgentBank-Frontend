@@ -27,28 +27,30 @@ const Header = () => {
                 />
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
-            <div>
+            <>
                 {userName ? (
-                    <>
-                        <Link className="main-nav-item" to="/profile">
+                    <div className="flex gap-3">
+                        <Link className="main-nav-item flex gap-2 items-center" to="/profile">
+                            <div>
+                                {userName}
+                            </div>
                             <i className="fa fa-user-circle"></i>
-                            {userName}
                         </Link>
                         <Link className="main-nav-item" to="/settings">
                             <FontAwesomeIcon icon={faCog} />
                         </Link>
-                        <Link className="main-nav-item" to="/" onClick={handleSignOut}>
-                            <i className="fa fa-sign-out"></i>
+                        <Link className="main-nav-item flex gap-2 items-center" to="/" onClick={handleSignOut}>
                             Sign Out
+                            <i className="fa fa-sign-out"></i>
                         </Link>
-                    </>
+                    </div>
                 ) : (
-                    <Link className="main-nav-item" to="/signin">
-                        <i className="fa fa-user-circle"></i>
+                    <Link className="main-nav-ite flex gap-2 items-center" to="/signin">
                         Sign In
+                        <i className="fa fa-user-circle"></i>
                     </Link>
                 )}
-            </div>
+            </>
         </nav>
     );
 };
