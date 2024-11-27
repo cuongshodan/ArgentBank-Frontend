@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer'
 import SignIn from './pages/Signin/SignIn'
 import Profile from './pages/Profile/Profile'
 import Settings from './pages/Settings/Settings'
-import TestComponent from './components/TestComponent';
 
 function App() {
 
@@ -19,7 +18,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
-        <TestComponent />
         <Footer />
       </Router>
     </body>
