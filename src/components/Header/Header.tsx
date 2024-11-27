@@ -1,19 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser, logOut } from '../../features/auth/authSlice';
-import { useGetProfileQuery } from '../../features/auth/authApiSlice';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { apiSlice } from '../../app/api/apiSlice';
 
 const Header = () => {
-    const user = useSelector(selectCurrentUser);
+    const userName = useSelector(selectCurrentUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { data: profile } = useGetProfileQuery(undefined, {
-        skip: !user
-    });
 
     const handleSignOut = () => {
         dispatch(logOut());
+        dispatch(apiSlice.util.resetApiState());
         navigate('/');
     };
 
@@ -28,11 +28,14 @@ const Header = () => {
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
             <div>
-                {user ? (
+                {userName ? (
                     <>
                         <Link className="main-nav-item" to="/profile">
                             <i className="fa fa-user-circle"></i>
-                            {profile?.body.firstName}
+                            {userName}
+                        </Link>
+                        <Link className="main-nav-item" to="/settings">
+                            <FontAwesomeIcon icon={faCog} />
                         </Link>
                         <Link className="main-nav-item" to="/" onClick={handleSignOut}>
                             <i className="fa fa-sign-out"></i>

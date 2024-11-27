@@ -20,7 +20,7 @@ const baseQuery = fetchBaseQuery({
     let token = state.auth.token;
 
     if (!token) {
-      token = localStorage.getItem('token') || '';
+      token = localStorage.getItem('token') || sessionStorage.getItem('token') || '';
     }
 
     if (token) {
@@ -77,5 +77,6 @@ const baseQueryWithReauth: BaseQueryFn<
 
 export const apiSlice = createApi({
   baseQuery: baseQueryWithReauth,
+  tagTypes: ['Profile'],
   endpoints: (builder) => ({}),
 });

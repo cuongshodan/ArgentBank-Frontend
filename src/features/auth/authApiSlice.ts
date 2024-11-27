@@ -27,6 +27,24 @@ interface ProfileResponse {
   };
 }
 
+interface UpdateProfileRequest {
+  userName: string;
+}
+
+interface UpdateProfileResponse {
+  status: number;
+  message: string;
+  body: {
+    email: string;
+    firstName: string;
+    lastName: string;
+    userName: string;
+    createdAt: string;
+    updatedAt: string;
+    id: string;
+  };
+}
+
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
@@ -48,8 +66,17 @@ export const authApiSlice = apiSlice.injectEndpoints({
           'accept': 'application/json',
         },
       }),
+      providesTags: ['Profile'],
+    }),
+    updateProfile: builder.mutation<UpdateProfileResponse, UpdateProfileRequest>({
+      query: (data) => ({
+        url: "user/profile",
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ['Profile'],
     }),
   }),
 });
 
-export const { useLoginMutation, useGetProfileQuery } = authApiSlice;
+export const { useLoginMutation, useGetProfileQuery, useUpdateProfileMutation } = authApiSlice;
