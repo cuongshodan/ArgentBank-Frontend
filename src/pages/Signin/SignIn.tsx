@@ -9,7 +9,7 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [login] = useLoginMutation();
@@ -43,8 +43,9 @@ const SignIn = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="input-wrapper">
                         <label htmlFor="email">Email</label>
-                        <input 
-                            type="email" 
+                        <input
+                            className="border"
+                            type="email"
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -52,17 +53,18 @@ const SignIn = () => {
                     </div>
                     <div className="input-wrapper">
                         <label htmlFor="password">Password</label>
-                        <input 
-                            type="password" 
+                        <input
+                            className="border"
+                            type="password"
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <div className="input-remember">
-                        <input 
-                            type="checkbox" 
-                            id="remember-me" 
+                        <input
+                            type="checkbox"
+                            id="remember-me"
                             checked={rememberMe}
                             onChange={(e) => setRememberMe(e.target.checked)}
                         />

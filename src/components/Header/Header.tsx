@@ -29,7 +29,7 @@ const Header = () => {
             </Link>
             <>
                 {userName ? (
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 text-green-400">
                         <Link className="main-nav-item flex gap-2 items-center" to="/profile">
                             <div>
                                 {userName}
